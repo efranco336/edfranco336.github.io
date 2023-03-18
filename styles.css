@@ -61,6 +61,28 @@ input {
     width: 100%;
 }
 
+.game-square {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+.challenge {
+    background-color: #f0ad4e;
+    border: 2px solid #eea236;
+}
+
+.break {
+    background-color: #5bc0de;
+    border: 2px solid #46b8da;
+}
+
 .hidden {
     display: none;
 }
