@@ -4,37 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProbaQuest</title>
-    <!-- Asegúrate de vincular tus archivos CSS y JavaScript aquí -->
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>ProbaQuest</h1>
-        <p>Un juego para aprender probabilidades</p>
-    </header>
-    <main>
-        <section id="game-board">
-            <!-- Aquí puedes crear la estructura del tablero de juego con casillas, usando divs, listas u otra estructura que prefieras -->
-            <div class="row">
-                <div class="cell">1</div>
-                <div class="cell">2</div>
-                <!-- Continúa con más casillas -->
-            </div>
-            <!-- Continúa con más filas según sea necesario -->
-        </section>
-        <section id="controls">
-            <button id="roll-dice">Lanzar dado</button>
-            <p id="current-player">Jugador actual: <span id="player-name">Jugador 1</span></p>
-            <p id="dice-result">Resultado del dado: <span id="dice-number">-</span></p>
-        </section>
-        <section id="event-card" class="hidden">
-            <h2>Tarjeta de evento</h2>
-            <p id="event-question">Aquí aparecerá la pregunta de probabilidad.</p>
-            <input type="text" id="event-answer" placeholder="Escribe tu respuesta aquí">
-            <button id="submit-answer">Enviar respuesta</button>
-            <p id="feedback" class="hidden">Aquí se mostrará retroalimentación sobre la respuesta del jugador.</p>
-        </section>
-    </main>
+    <h1>ProbaQuest</h1>
+
+    <div id="game-board">
+        <!-- Aquí iría el código del tablero del juego -->
+    </div>
+
+    <button id="roll-dice">Lanzar dado</button>
+    <div id="dice-number" hidden></div>
+
+    <div id="event-card" class="hidden">
+        <h2>Pregunta de probabilidad</h2>
+        <p id="event-question"></p>
+        <input type="text" id="event-answer" placeholder="Escribe tu respuesta aquí">
+        <button id="submit-answer">Enviar respuesta</button>
+    </div>
+
+    <div id="feedback" class="hidden"></div>
+
 </body>
 </html>
