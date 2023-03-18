@@ -4,6 +4,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitAnswerButton = document.getElementById('submit-answer');
     const feedback = document.getElementById('feedback');
 
+    let questions = [];
+
+    // Función para cargar las preguntas desde el archivo JSON
+    async function loadQuestions() {
+    const response = await fetch('questions.json');
+    const data = await response.json();
+    questions = data;
+    }  
+
+// Llama a la función para cargar las preguntas al cargar la página
+    loadQuestions();
+    function showRandomQuestion() {
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    const randomQuestion = questions[randomIndex];
+    document.getElementById('event-question').textContent = randomQuestion.question;
+
+    // Almacena la respuesta correcta en un atributo de datos para su posterior evaluación
+    document.getElementById('event-answer').dataset.correctAnswer = randomQuestion.answer;
+    }
+
+
     rollDiceButton.addEventListener('click', () => {
         const diceResult = Math.floor(Math.random() * 6) + 1;
         document.getElementById('dice-number').textContent = diceResult;
@@ -13,16 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Muestra la tarjeta de evento y oculta el botón de lanzar dado
         eventCard.classList.remove('hidden');
         rollDiceButton.classList.add('hidden');
+        showRandomQuestion();
     });
+
 
     submitAnswerButton.addEventListener('click', () => {
         const eventAnswer = document.getElementById('event-answer').value;
+        const correctAnswer = document.getElementById('event-answer').dataset.correctAnswer;
         
-        // Aquí puedes agregar la lógica para evaluar la respuesta del jugador y actualizar el tablero según las reglas del juego
-        
+        // Compara la respuesta del jugador con la respuesta correcta
+        if (eventAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+            // La respuesta es correcta, actualiza el juego según las reglas
+            feedback.textContent = '¡Respuesta correcta!';
+        } else {
+            // La respuesta es incorrecta, informa al jugador
+            feedback.textContent = `Respuesta incorrecta. La respuesta correcta es ${correctAnswer}.`;
+        }
+    
         // Muestra retroalimentación y oculta la tarjeta de evento y el botón de enviar respuesta
         feedback.classList.remove('hidden');
-        feedback.textContent = 'Aquí se mostrará retroalimentación sobre la respuesta del jugador.';
         eventCard.classList.add('hidden');
         submitAnswerButton.classList.add('hidden');
     });

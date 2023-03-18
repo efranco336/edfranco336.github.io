@@ -1,0 +1,11 @@
+[
+    {
+        "question": "¿Cuál es la probabilidad de sacar un 3 al lanzar un dado?",
+        "answer": "1/6"
+    },
+    {
+        "question": "Si lanzas una moneda, ¿cuál es la probabilidad de que salga cara?",
+        "answer": "1/2"
+    },
+    // Más preguntas y respuestas aquí
+]
