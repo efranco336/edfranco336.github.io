@@ -1,0 +1,66 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 0.5rem;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Estilos del tablero de juego */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cell {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    height: 50px;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Estilos de los controles y tarjetas de eventos */
+button {
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+input {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.25rem;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
